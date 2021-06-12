@@ -12,6 +12,9 @@ namespace isoma
 {
     public partial class Form1 : Form
     {
+
+        //version 2.0
+        
         int input;
         public static Player player1;
         public static Player player2;
