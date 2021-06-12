@@ -13,7 +13,7 @@ namespace isoma
     public partial class Form1 : Form
     {
 
-        //version 2.0
+        //version 2.1
         
         int input;
         public static Player player1;
@@ -21,7 +21,7 @@ namespace isoma
         Random rng;
         public static List<Button> buttonList;
         public static List<Button> frozenCells;
-        int turnCount;
+        public static int turnCount;
         bool IsFirstMove;
         bool IsPlayer1;
         private static Form1 form = null;
@@ -43,9 +43,15 @@ namespace isoma
 
         }
 
-        public void Start(bool enable)
+        private void Start(bool enable)
         {
             ControlsPanel.Visible = enable;
+        }
+
+        private void UpdateScoreboard()
+        {
+            label4.Text = $"{player1.Name}: {player1.Wins}";
+            label5.Text = $"{player2.Name}: {player2.Wins}";
         }
 
 
@@ -74,7 +80,10 @@ namespace isoma
                     IsFirstMove = true;
                     IsPlayer1 = false;
                     Calculate.DisableAll();
+                    Calculate.calculate(player1, buttonList, player2, frozenCells);
                     Calculate.CalculateVM(player2, buttonList, player1, frozenCells);
+
+                    turnCount++;
                 }
             }
             else
@@ -90,7 +99,10 @@ namespace isoma
                     IsFirstMove = true;
                     IsPlayer1 = true;
                     Calculate.DisableAll();
+                    Calculate.calculate(player2, buttonList, player1, frozenCells);
                     Calculate.CalculateVM(player1, buttonList, player2, frozenCells);
+
+                    turnCount++;
                 }
             }
 
@@ -163,10 +175,15 @@ namespace isoma
             {
                 form.Controls.Remove(b);
             }
+
                 buttonList.Clear();
                 frozenCells.Clear();
                 form.Start(enable);
+                form.UpdateScoreboard();
                 form.Genbutton.Focus();
+                turnCount = 0;
+
+
         }
 
 

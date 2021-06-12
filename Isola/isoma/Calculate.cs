@@ -18,10 +18,28 @@ namespace isoma
 
         public static void CalculateVM(Player player, List<Button> buttonList, Player oppPlayer, List<Button> frozenCells)
         {
+            calculate(player, buttonList, oppPlayer, frozenCells);
             
+            foreach (var c in VMlist)
+            {
+
+                if (c.Tag.ToString() != oppPlayer.currPos)
+                {
+                    if (frozenCells.Contains(c) == false)
+                    {
+                        c.Enabled = true;
+                    }
+                }
+            }
+        }
+
+        public static void calculate(Player player, List<Button> buttonList, Player oppPlayer, List<Button> frozenCells)
+        {
+
+            //Check WIN
             VMlist = new List<Button> { };
             counter = 0;
-            
+
             foreach (var cell in buttonList)
             {
                 if (cell.Tag.ToString() == $"{player.X - 1},{player.Y + 1}")
@@ -32,7 +50,7 @@ namespace isoma
                         counter++;
                     }
                 }
-                if (cell.Tag.ToString() == $"{player.X},{player.Y + 1}") 
+                if (cell.Tag.ToString() == $"{player.X},{player.Y + 1}")
                 {
                     VMlist.Add(cell);
                     if (frozenCells.Contains(cell) == false && oppPlayer.currPos != cell.Tag.ToString())
@@ -80,7 +98,7 @@ namespace isoma
                         counter++;
                     }
                 }
-                if (cell.Tag.ToString() == $"{player.X + 1},{player.Y - 1}" )
+                if (cell.Tag.ToString() == $"{player.X + 1},{player.Y - 1}")
                 {
                     VMlist.Add(cell);
                     if (frozenCells.Contains(cell) == false && oppPlayer.currPos != cell.Tag.ToString())
@@ -92,19 +110,6 @@ namespace isoma
             if (counter == 0)
             {
                 Win(player);
-            }
-
-
-            foreach (var c in VMlist)
-            {
-
-                if (c.Tag.ToString() != oppPlayer.currPos)
-                {
-                    if (frozenCells.Contains(c) == false)
-                    {
-                        c.Enabled = true;
-                    }
-                }
             }
         }
 
@@ -161,10 +166,11 @@ namespace isoma
 
         public static void Win(Player player)
         {
-            DialogResult res = MessageBox.Show($"{player.Name} wins! Would you like to play again?", "WINNER!", MessageBoxButtons.YesNo);
+            DialogResult res = MessageBox.Show($"{player.Name} wins in {Form1.turnCount} turns! Would you like to play again?", "WINNER!", MessageBoxButtons.YesNo);
 
             if (res == DialogResult.Yes)
             {
+                player.Wins++;
                 DisableAll();
                 Form1.Reset(true);
             }

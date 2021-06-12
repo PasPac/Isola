@@ -37,6 +37,8 @@ namespace isoma
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.ControlsPanel = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.ControlsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,6 +106,8 @@ namespace isoma
             // 
             // ControlsPanel
             // 
+            this.ControlsPanel.Controls.Add(this.label5);
+            this.ControlsPanel.Controls.Add(this.label4);
             this.ControlsPanel.Controls.Add(this.textBox3);
             this.ControlsPanel.Controls.Add(this.label3);
             this.ControlsPanel.Controls.Add(this.textBox1);
@@ -116,6 +120,22 @@ namespace isoma
             this.ControlsPanel.Size = new System.Drawing.Size(273, 214);
             this.ControlsPanel.TabIndex = 6;
             this.ControlsPanel.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(198, 79);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 15);
+            this.label5.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(135, 79);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 15);
+            this.label4.TabIndex = 6;
             // 
             // Form1
             // 
@@ -141,6 +161,8 @@ namespace isoma
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox ControlsPanel;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }
 
