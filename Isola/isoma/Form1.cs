@@ -84,6 +84,7 @@ namespace isoma
                     Calculate.CalculateVM(player2, buttonList, player1, frozenCells);
 
                     turnCount++;
+                    label6.Text = $"Turns: {turnCount}";
                 }
             }
             else
@@ -103,6 +104,7 @@ namespace isoma
                     Calculate.CalculateVM(player1, buttonList, player2, frozenCells);
 
                     turnCount++;
+                    label6.Text = $"Turns: {turnCount}";
                 }
             }
 

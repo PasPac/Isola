@@ -39,6 +39,7 @@ namespace isoma
             this.ControlsPanel = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.ControlsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -137,17 +138,28 @@ namespace isoma
             this.label4.Size = new System.Drawing.Size(0, 15);
             this.label4.TabIndex = 6;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(731, 371);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(48, 15);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Turns: 0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 597);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.ControlsPanel);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ControlsPanel.ResumeLayout(false);
             this.ControlsPanel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -163,6 +175,7 @@ namespace isoma
         private System.Windows.Forms.GroupBox ControlsPanel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
     }
 }
 
