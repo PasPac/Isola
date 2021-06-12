@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "isoma", "isoma\isoma.csproj", "{C7A8846A-35E0-41CD-8373-C2AB82D431F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7A8846A-35E0-41CD-8373-C2AB82D431F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7A8846A-35E0-41CD-8373-C2AB82D431F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7A8846A-35E0-41CD-8373-C2AB82D431F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7A8846A-35E0-41CD-8373-C2AB82D431F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C326749-F1DE-433D-88F7-09B46468D33D}
+	EndGlobalSection
+EndGlobal
