@@ -1,2 +1,2 @@
 # Isola
-My submisson for az-moga 2021
+My submission for az-moga 2021
