@@ -14,122 +14,109 @@ namespace isoma
     public class Calculate
     {
         static int counter;
-        static bool HasMoves = false;
         static List<Button> VMlist;
 
         public static void CalculateVM(Player player, List<Button> buttonList, Player oppPlayer, List<Button> frozenCells)
         {
-            HasMoves = false;
+            
             VMlist = new List<Button> { };
             counter = 0;
-            foreach (var button in buttonList)
-            {
-                if (button.Tag.ToString() == $"{player.X -1},{player.Y + 1}")
-                {
-                    VMlist.Add(button);
-                    if (frozenCells.Contains(button) == false)
-                    {
-                    counter++;
-                    }
-                }
-                if (button.Tag.ToString() == $"{player.X},{player.Y + 1}")
-                {
-                    VMlist.Add(button);
-                    if (frozenCells.Contains(button) == false)
-                    {
-                        counter++;
-                    }
-                }
-                if (button.Tag.ToString() == $"{player.X+1},{player.Y + 1}")
-                {
-                    VMlist.Add(button);
-                    if (frozenCells.Contains(button) == false)
-                    {
-                        counter++;
-                    }
-                }
-                if (button.Tag.ToString() == $"{player.X-1},{player.Y}")
-                {
-                    VMlist.Add(button);
-                    if (frozenCells.Contains(button) == false)
-                    {
-                        counter++;
-                    }
-                }
-                if (button.Tag.ToString() == $"{player.X+1},{player.Y}")
-                {
-                    VMlist.Add(button);
-                    if (frozenCells.Contains(button) == false)
-                    {
-                        counter++;
-                    }
-                }
-                if (button.Tag.ToString() == $"{player.X+1},{player.Y}")
-                {
-                    VMlist.Add(button);
-                    HasMoves = true;
-                    if (frozenCells.Contains(button) == false)
-                    {
-                        counter++;
-                    }
-                }
-                if (button.Tag.ToString() == $"{player.X-1},{player.Y -1}")
-                {
-                    VMlist.Add(button);
-                    HasMoves = true;
-                    if (frozenCells.Contains(button) == false)
-                    {
-                        counter++;
-                    }
-                }
-                if (button.Tag.ToString() == $"{player.X},{player.Y - 1}")
-                {
-                    VMlist.Add(button);
-                    HasMoves = true;
-                    if (frozenCells.Contains(button) == false)
-                    {
-                        counter++;
-                    }
-                }
-                if (button.Tag.ToString() == $"{player.X+1},{player.Y - 1}")
-                {
-                    VMlist.Add(button);
-                    HasMoves = true;
-                    if (frozenCells.Contains(button) == false)
-                    {
-                        counter++;
-                    }
-                }                              
-            }
-            if(counter == 0)
-            {                
-                 Win(player);
-            }
             
+            foreach (var cell in buttonList)
+            {
+                if (cell.Tag.ToString() == $"{player.X - 1},{player.Y + 1}")
+                {
+                    VMlist.Add(cell);
+                    if (frozenCells.Contains(cell) == false && oppPlayer.currPos != cell.Tag.ToString())
+                    {
+                        counter++;
+                    }
+                }
+                if (cell.Tag.ToString() == $"{player.X},{player.Y + 1}") 
+                {
+                    VMlist.Add(cell);
+                    if (frozenCells.Contains(cell) == false && oppPlayer.currPos != cell.Tag.ToString())
+                    {
+                        counter++;
+                    }
+                }
+                if (cell.Tag.ToString() == $"{player.X + 1},{player.Y + 1}")
+                {
+                    VMlist.Add(cell);
+                    if (frozenCells.Contains(cell) == false && oppPlayer.currPos != cell.Tag.ToString())
+                    {
+                        counter++;
+                    }
+                }
+                if (cell.Tag.ToString() == $"{player.X - 1},{player.Y}")
+                {
+                    VMlist.Add(cell);
+                    if (frozenCells.Contains(cell) == false && oppPlayer.currPos != cell.Tag.ToString())
+                    {
+                        counter++;
+                    }
+                }
+                if (cell.Tag.ToString() == $"{player.X + 1},{player.Y}")
+                {
+                    VMlist.Add(cell);
+                    if (frozenCells.Contains(cell) == false && oppPlayer.currPos != cell.Tag.ToString())
+                    {
+                        counter++;
+                    }
+                }
+                if (cell.Tag.ToString() == $"{player.X - 1},{player.Y - 1}")
+                {
+                    VMlist.Add(cell);
+                    if (frozenCells.Contains(cell) == false && oppPlayer.currPos != cell.Tag.ToString())
+                    {
+                        counter++;
+                    }
+                }
+                if (cell.Tag.ToString() == $"{player.X},{player.Y - 1}")
+                {
+                    VMlist.Add(cell);
+                    if (frozenCells.Contains(cell) == false && oppPlayer.currPos != cell.Tag.ToString())
+                    {
+                        counter++;
+                    }
+                }
+                if (cell.Tag.ToString() == $"{player.X + 1},{player.Y - 1}" )
+                {
+                    VMlist.Add(cell);
+                    if (frozenCells.Contains(cell) == false && oppPlayer.currPos != cell.Tag.ToString())
+                    {
+                        counter++;
+                    }
+                }
+            }
+            if (counter == 0)
+            {
+                Win(player);
+            }
+
 
             foreach (var c in VMlist)
             {
-                //TODO Freeze check * 
 
-                if (c.Tag.ToString() != $"{oppPlayer.X},{oppPlayer.Y}")
+                if (c.Tag.ToString() != oppPlayer.currPos)
                 {
                     if (frozenCells.Contains(c) == false)
                     {
                         c.Enabled = true;
                     }
-                }            
+                }
             }
         }
 
         public static void FreezeCell(Button cell, List<Button> frozenCells)
         {
-           
+
             frozenCells.Add(cell);
             cell.Enabled = false;
             cell.BackColor = Color.Black;
 
-            
-             
+
+
         }
 
         public static void Move(Player player, Button cell, List<Button> buttonList, Player oppPlayer, List<Button> frozenCells)
@@ -137,35 +124,36 @@ namespace isoma
 
             foreach (var celll in buttonList)
             {
-                if (celll.Tag.ToString() == $"{player.X},{player.Y}") 
+                if (celll.Tag.ToString() == $"{player.X},{player.Y}")
                 {
                     celll.Enabled = true;
                     celll.UseVisualStyleBackColor = true;
                     celll.BackColor = default(Color);
                 }
             }
-            
+
             cell.BackColor = player.C;
             cell.Enabled = false;
             string[] coord = cell.Tag.ToString().Split(',');
             player.X = int.Parse(coord[0]);
             player.Y = int.Parse(coord[1]);
+            player.currPos = $"{coord[0]},{coord[1]}";
 
 
             foreach (var b in buttonList)
             {
-                if (b.Tag.ToString() != $"{player.X},{player.Y}" && b.Tag.ToString() != $"{oppPlayer.X},{oppPlayer.Y}" && frozenCells.Contains(b) == false)
+                if (b.Tag.ToString() != player.currPos && b.Tag.ToString() != oppPlayer.currPos && frozenCells.Contains(b) == false)
                 {
                     b.Enabled = true;
                 }
             }
-            
+
 
         }
 
-        public static void DisableAll(List<Button> buttonList)
+        public static void DisableAll()
         {
-            foreach(var b in buttonList)
+            foreach (var b in Form1.buttonList)
             {
                 b.Enabled = false;
             }
@@ -173,10 +161,19 @@ namespace isoma
 
         public static void Win(Player player)
         {
-            MessageBox.Show($"{player.Name} wins!");
+            DialogResult res = MessageBox.Show($"{player.Name} wins! Would you like to play again?", "WINNER!", MessageBoxButtons.YesNo);
+
+            if (res == DialogResult.Yes)
+            {
+                DisableAll();
+                Form1.Reset(true);
+            }
+            else
+            {
+                Application.Exit();
+            }
+
 
         }
-
-
     }
 }

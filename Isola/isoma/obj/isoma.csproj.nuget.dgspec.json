@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Downloads\\isoma\\isoma\\isoma.csproj": {}
+    "C:\\Users\\User\\source\\repos\\Isola\\Isola\\isoma\\isoma.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Downloads\\isoma\\isoma\\isoma.csproj": {
+    "C:\\Users\\User\\source\\repos\\Isola\\Isola\\isoma\\isoma.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Downloads\\isoma\\isoma\\isoma.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\Isola\\Isola\\isoma\\isoma.csproj",
         "projectName": "isoma",
-        "projectPath": "C:\\Users\\User\\Downloads\\isoma\\isoma\\isoma.csproj",
+        "projectPath": "C:\\Users\\User\\source\\repos\\Isola\\Isola\\isoma\\isoma.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Downloads\\isoma\\isoma\\obj\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\Isola\\Isola\\isoma\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -36,11 +36,13 @@ namespace isoma
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.ControlsPanel = new System.Windows.Forms.GroupBox();
+            this.ControlsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(21, 430);
+            this.textBox1.Location = new System.Drawing.Point(18, 97);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(84, 23);
             this.textBox1.TabIndex = 0;
@@ -48,7 +50,7 @@ namespace isoma
             // 
             // Genbutton
             // 
-            this.Genbutton.Location = new System.Drawing.Point(21, 371);
+            this.Genbutton.Location = new System.Drawing.Point(18, 38);
             this.Genbutton.Name = "Genbutton";
             this.Genbutton.Size = new System.Drawing.Size(84, 23);
             this.Genbutton.TabIndex = 0;
@@ -59,7 +61,7 @@ namespace isoma
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(146, 488);
+            this.textBox3.Location = new System.Drawing.Point(143, 155);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(118, 23);
             this.textBox3.TabIndex = 0;
@@ -67,7 +69,7 @@ namespace isoma
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(12, 488);
+            this.textBox4.Location = new System.Drawing.Point(9, 155);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(118, 23);
             this.textBox4.TabIndex = 2;
@@ -76,7 +78,7 @@ namespace isoma
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 470);
+            this.label1.Location = new System.Drawing.Point(9, 137);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 15);
             this.label1.TabIndex = 3;
@@ -85,7 +87,7 @@ namespace isoma
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(146, 470);
+            this.label2.Location = new System.Drawing.Point(143, 137);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 15);
             this.label2.TabIndex = 4;
@@ -94,28 +96,38 @@ namespace isoma
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 412);
+            this.label3.Location = new System.Drawing.Point(29, 79);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 15);
             this.label3.TabIndex = 5;
             this.label3.Text = "Insert Size:";
+            // 
+            // ControlsPanel
+            // 
+            this.ControlsPanel.Controls.Add(this.textBox3);
+            this.ControlsPanel.Controls.Add(this.label3);
+            this.ControlsPanel.Controls.Add(this.textBox1);
+            this.ControlsPanel.Controls.Add(this.label2);
+            this.ControlsPanel.Controls.Add(this.Genbutton);
+            this.ControlsPanel.Controls.Add(this.label1);
+            this.ControlsPanel.Controls.Add(this.textBox4);
+            this.ControlsPanel.Location = new System.Drawing.Point(27, 371);
+            this.ControlsPanel.Name = "ControlsPanel";
+            this.ControlsPanel.Size = new System.Drawing.Size(273, 214);
+            this.ControlsPanel.TabIndex = 6;
+            this.ControlsPanel.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 597);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.Genbutton);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.ControlsPanel);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.ControlsPanel.ResumeLayout(false);
+            this.ControlsPanel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -128,6 +140,7 @@ namespace isoma
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox ControlsPanel;
     }
 }
 
